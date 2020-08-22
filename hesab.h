@@ -12,9 +12,10 @@ class hesab
     QString second_password;
     date expiration;
     QString mojodi_hesab;
+    QString name_of_owner;
 public:
     hesab();
-    hesab(QString _number_of_creditcard,QString _cvv2,date _expiration,QString _second_password);
+    hesab(QString _number_of_creditcard,QString _cvv2,date _expiration,QString _second_password,QString);
     hesab(const hesab &);
 
     QString getNumber_of_creditcard();
@@ -28,6 +29,10 @@ public:
 
     QString getSecond_password();
     void setSecond_password(QString s);
+
+    QString getNameOfOwner();
+    void setNameOfOwner(QString s);
+
 
     QString getMojodiHesab();
     void setMojodiHesab(QString s);
