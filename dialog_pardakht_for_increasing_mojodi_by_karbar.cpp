@@ -16,15 +16,23 @@ Dialog_pardakht_for_increasing_mojodi_by_karbar::Dialog_pardakht_for_increasing_
 {
     ui->setupUi(this);
     this->Id_Loginer=ssss;
+    ui->second_password->setEchoMode(QLineEdit::Password);
+
+    QPixmap bkgnd("C:/Users/erfan/Documents/ProjectOfTerm2/increasepic.gif");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
 
     _tm=new QTimer();
-    _tm->setInterval(1300);
+    _tm->setInterval(3000);
     connect(_tm,SIGNAL(timeout()),this,SLOT(checkedProgressBar()));
     _tm->start();
 
     for(int i=1000;i<=20000;i+=1000)
         ui->comboBox_2_price->addItem(QString::number(i));
-    for(int i=2020;i<2030;i++)
+    for(int i=1396;i<1410;i++)
         ui->comboBox->addItem(QString::number(i));
 
     srand(time(0));
@@ -82,6 +90,10 @@ int checkramzAndCVV2(QString s)
 int checkRRobat(QString s1,QString s2)
 {
     int j=0;
+    if(s1=="")
+        return 0;
+    if(s1.length()*2!=s2.length())
+        return 0;
     for(int i=0;i<s1.length();i++)
     {
         if(s1[i]!=s2[j])
@@ -185,21 +197,18 @@ void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_accepted()
         hesab_node* tmp1=checkEtelatHesab();
         for(hesab_node* tmp=checkEtelatHesab();tmp!=nullptr;tmp=tmp->getNext())
         {
-            if(tmp->getData().getCvv2()==ui->CVV2->text() && tmp->getData().getNumber_of_creditcard()==ui->number_of_creditcard->text()
+            if(tmp->getData().getSecond_password()==ui->second_password->text()&&tmp->getData().getCvv2()==ui->CVV2->text() && tmp->getData().getNumber_of_creditcard()==ui->number_of_creditcard->text()
                     && tmp->getData().getExpiration().getYear()==ui->comboBox->currentText().toInt() && tmp->getData().getExpiration().getMonth()==ui->month->text().toInt())
             {
                 if(checkRRobat(ui->robat->text(),ui->sure->text()))
                 {
-
-                    if(tmp->getData().getExpiration().getYear()>date_now().getYear()||
-                      (tmp->getData().getExpiration().getYear()==date_now().getYear()
-                       &&tmp->getData().getExpiration().getMonth()>date_now().getMonth()))
+                    if(tmp->getData().getExpiration().getYear()==ui->comboBox->currentText().toInt()
+                            && tmp->getData().getExpiration().getMonth()==ui->month->text().toInt())
                     {
                         if(tmp->getData().getMojodiHesab().toInt()>ui->comboBox_2_price->currentText().toInt())
                         {
                             k=1;
-                            //QFile("C:/Users/albaloo/Documents/mainProjectTerm2/etelaateEsabBanki.txt").remove();
-                            QFile fil("C:/Users/albaloo/Documents/ProjectOfTerm2/etelaateEsabBanki.txt");
+                            QFile fil("C:/Users/erfan/Documents/ProjectOfTerm2/etelaateEsabBanki.txt");
                             fil.open(QIODevice::WriteOnly);
                             QTextStream stream(&fil);
                             stream.setCodec("UTF-8");
@@ -216,11 +225,13 @@ void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_accepted()
                                     long long int aa=tmp1->getData().getMojodiHesab().toInt();
                                     aa-=ui->comboBox_2_price->currentText().toInt();
                                     hsb.setMojodiHesab(QString::number(aa));
+                                    hsb.setNameOfOwner(tmp1->getData().getNameOfOwner());
                                     tmp1->setData(hsb);
                                 }
                                 stream<<tmp1->getData().getNumber_of_creditcard()<<"\t";
                                 stream<<tmp1->getData().getSecond_password()<<"\t";
                                 stream<<tmp1->getData().getCvv2()<<"\t";
+                                stream<<tmp1->getData().getNameOfOwner()<<"\t";
                                 stream<<tmp1->getData().getExpiration().getMonth()<<"\t";
                                 stream<<tmp1->getData().getExpiration().getYear()<<"\t";
                                 stream<<tmp1->getData().getMojodiHesab()<<"\n";
@@ -236,7 +247,6 @@ void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_accepted()
         if(k==1)
         {
             QMessageBox::information(this,"موفقیت امیز","موجودی شما افزایش یافت",QMessageBox::Ok);
-            this->close();
 
             karbar_node* tmp1=checkUserInformation();
             karbar_node* tmp6=tmp1;
@@ -261,8 +271,8 @@ void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_accepted()
                 }
             }
 
-            QFile ("C:/Users/albaloo/Documents/ProjectOfTerm2/karbarInformation.txt").remove();
-            QFile file("C:/Users/albaloo/Documents/ProjectOfTerm2/karbarInformation.txt");
+            QFile ("C:/Users/erfan/Documents/ProjectOfTerm2/karbarInformation.txt").remove();
+            QFile file("C:/Users/erfan/Documents/ProjectOfTerm2/karbarInformation.txt");
             file.open(QIODevice::Append);
             QTextStream stream(&file);
             stream.setCodec("UTF-8");
@@ -287,8 +297,11 @@ void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_accepted()
                     <<tmp6->getData().getAddress().getAlley()<< "\t"
                     <<tmp6->getData().getAddress().getPostcode()<<"\t"
                     <<tmp6->getData().getMojodi()<<"\n";
-                 }
+            }
             file.close();
+
+            ui->progressBar->setValue(0);
+            _tm->stop();
 
             this->close();
             facilities_for_karbar* fc=new facilities_for_karbar(this->Id_Loginer);
@@ -335,6 +348,9 @@ void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_accepted()
 
 void Dialog_pardakht_for_increasing_mojodi_by_karbar::on_buttonBox_rejected()
 {
+    ui->progressBar->setValue(0);
+    _tm->stop();
+
     this->close();
     facilities_for_karbar* fcfk=new facilities_for_karbar(this->Id_Loginer);
     fcfk->show();

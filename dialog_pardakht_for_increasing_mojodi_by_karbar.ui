@@ -6,96 +6,84 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1167</width>
+    <width>1100</width>
     <height>761</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>460</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="number_of_creditcard">
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>290</y>
+     <y>270</y>
      <width>311</width>
-     <height>20</height>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>280</y>
-     <width>191</width>
-     <height>31</height>
+     <x>300</x>
+     <y>230</y>
+     <width>201</width>
+     <height>121</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <family>IranNastaliq</family>
+     <pointsize>22</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>شماره کارت</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;شماره کارت&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="robat">
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>610</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>40</y>
-     <width>511</width>
+     <y>599</y>
+     <width>161</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Aharoni</family>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="placeholderText">
+    <string>عدد مقابل را وارد کنید</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>-20</y>
+     <width>611</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>IranNastaliq</family>
+     <pointsize>36</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
-    <string>افزایش موجودی</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="month">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>460</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>12</number>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;افزایش موجودی&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -103,13 +91,16 @@
     <rect>
      <x>360</x>
      <y>330</y>
-     <width>71</width>
-     <height>21</height>
+     <width>101</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <family>IranNastaliq</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -120,37 +111,29 @@
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>330</y>
-     <width>111</width>
-     <height>20</height>
+     <y>339</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>430</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>ماه</string>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="sure">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>550</y>
-     <width>231</width>
-     <height>31</height>
+     <x>610</x>
+     <y>590</y>
+     <width>261</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
+     <pointsize>16</pointsize>
      <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
@@ -166,33 +149,25 @@
   <widget class="QLineEdit" name="second_password">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>520</y>
-     <width>131</width>
-     <height>20</height>
+     <x>470</x>
+     <y>529</y>
+     <width>161</width>
+     <height>41</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>440</y>
-     <width>47</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>سال</string>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>670</y>
+     <x>720</x>
+     <y>680</y>
      <width>211</width>
-     <height>23</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="standardButtons">
@@ -202,74 +177,150 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>390</y>
-     <width>111</width>
-     <height>31</height>
+     <x>650</x>
+     <y>350</y>
+     <width>161</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <family>IranNastaliq</family>
+     <pointsize>22</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>تاریخ انقضا</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;:تاریخ انقضا&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>520</y>
-     <width>151</width>
-     <height>21</height>
+     <x>290</x>
+     <y>490</y>
+     <width>231</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <family>IranNastaliq</family>
+     <pointsize>22</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>رمز دوم</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_2_price">
-   <property name="geometry">
-    <rect>
-     <x>880</x>
-     <y>330</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>890</x>
-     <y>300</y>
-     <width>55</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>قیمت</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;رمز دوم&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QProgressBar" name="progressBar">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>320</x>
      <y>160</y>
-     <width>451</width>
-     <height>23</height>
+     <width>511</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="value">
     <number>0</number>
    </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>240</y>
+     <width>131</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <family>IranNastaliq</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;قیمت&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox_2_price"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>436</x>
+     <y>380</y>
+     <width>91</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>IranNastaliq</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;سال&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>380</y>
+     <width>61</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <family>IranNastaliq</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ماه&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="month">
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>12</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

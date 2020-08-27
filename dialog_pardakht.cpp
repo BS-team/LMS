@@ -19,15 +19,24 @@
 #include"facilities_for_karbar.h"
 #include"usersoptionformanger.h"
 
+int priceInKart=0;
+
 dialog_pardakht::dialog_pardakht(int _manager_or_user,QString _name,QString _lastName,QString _national,QString _phone,QString _email
     ,int birth_day,int birth_month,int birth_year,QString _city,QString _street,QString _alley,QString _postCode,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::dialog_pardakht)
 {
     ui->setupUi(this);
+    ui->second_password->setEchoMode(QLineEdit::Password);
+
+    QPixmap bkgnd("C:/Users/erfan/Documents/ProjectOfTerm2/pardakhtpic.jpg");
+       bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+       QPalette palette;
+       palette.setBrush(QPalette::Background, bkgnd);
+       this->setPalette(palette);
 
     _time=new QTimer();
-    _time->setInterval(1200);
+    _time->setInterval(3000);
     connect(_time,SIGNAL(timeout()),this,SLOT(checkProgressbr()));
     _time->start();
 
@@ -47,7 +56,7 @@ dialog_pardakht::dialog_pardakht(int _manager_or_user,QString _name,QString _las
 
     if(manager_or_user==0||manager_or_user==1)
     {
-        ui->label_7_price->setText("مبلغ 2000 تومان برای عضویت پرداخت کیند");
+        ui->label_7_price->setText("مبلغ20000 تومان را برای عضویت پرداخت کنید");
     }
     else
     {
@@ -60,17 +69,13 @@ dialog_pardakht::dialog_pardakht(int _manager_or_user,QString _name,QString _las
                 break;
             }
         }
-        ui->label_7_price->setText("پرداخت کنید  "+QString::number(20000-aa)+" برای عضویت در کتاب خانه ");
+        ui->label_7_price->setText("پرداخت کنید  "+QString::number(20000-aa)+" برای تمدیدعضویت در کتاب خانه ");
+        priceInKart=20000-aa;
     }
 
-    QPalette pal = palette();
-    // set black background
-    pal.setColor(QPalette::Background, Qt::cyan);
-    this->setAutoFillBackground(true);
-    this->setPalette(pal);
-    this->setWindowTitle("pay");
+    this->setWindowTitle("درگاه پرداخت");
 
-    for(int i=2020;i<2030;i++)
+    for(int i=1396;i<1410;i++)
         ui->comboBox->addItem(QString::number(i));
 
     srand(time(0));
@@ -133,6 +138,10 @@ int checkRamzAndCVV2(QString s)
 int checkrobat(QString s1,QString s2)
 {
     int j=0;
+    if(s1=="")
+        return 0;
+    if(s1.length()*2!=s2.length())
+        return 0;
     for(int i=0;i<s1.length();i++)
     {
         if(s1[i]!=s2[j])
@@ -234,19 +243,20 @@ void dialog_pardakht::on_buttonBox_accepted()
        hesab_node* tmp1=checkEtelatHesab();
        for(hesab_node* tmp=checkEtelatHesab();tmp!=nullptr;tmp=tmp->getNext())
        {
-           if(tmp->getData().getCvv2()==ui->CVV2->text() && tmp->getData().getNumber_of_creditcard()==ui->number_of_creditcard->text()
+           if(tmp->getData().getSecond_password()==ui->second_password->text()&&tmp->getData().getCvv2()==ui->CVV2->text() && tmp->getData().getNumber_of_creditcard()==ui->number_of_creditcard->text()
                    && tmp->getData().getExpiration().getYear()==ui->comboBox->currentText().toInt() && tmp->getData().getExpiration().getMonth()==ui->month->text().toInt())
-           {               
+           {
                if(checkrobat(ui->robat->text(),ui->sure->text()))
                {
-                   if(tmp->getData().getExpiration().getYear()>date_now().getYear()||
-                     (tmp->getData().getExpiration().getYear()==date_now().getYear()
-                      &&tmp->getData().getExpiration().getMonth()>date_now().getMonth()))
+                   if(tmp->getData().getExpiration().getYear()==ui->comboBox->currentText().toInt()
+                           && tmp->getData().getExpiration().getMonth()==ui->month->text().toInt())
                    {
-                       if(tmp->getData().getMojodiHesab().toInt()>20000)
+                       if((tmp->getData().getMojodiHesab().toInt()>20000 && this->manager_or_user==1)||
+                             (tmp->getData().getMojodiHesab().toInt()>20000 && this->manager_or_user==0)||
+                               (tmp->getData().getMojodiHesab().toInt()>priceInKart && this->manager_or_user==2)) //bug
                        {
                            k=1;
-                           QFile fil("C:/Users/albaloo/Documents/ProjectOfTerm2/etelaateEsabBanki.txt");
+                           QFile fil("C:/Users/erfan/Documents/ProjectOfTerm2/etelaateEsabBanki.txt");
                            fil.open(QIODevice::WriteOnly);
                            QTextStream stream(&fil);
                            stream.setCodec("UTF-8");
@@ -265,7 +275,7 @@ void dialog_pardakht::on_buttonBox_accepted()
                                        aa-=20000;
                                    else if(this->manager_or_user==2)
                                    {
-                                        for(karbar_node* tmp5=checkUserInformation();tmp5!=nullptr;tmp=tmp->getNext())
+                                        for(karbar_node* tmp5=checkUserInformation();tmp5!=nullptr;tmp5=tmp5->getNext())
                                         {
                                             if(tmp5->getData().getNational_code()==this->karbar_national_code)
                                             {
@@ -287,6 +297,10 @@ void dialog_pardakht::on_buttonBox_accepted()
                                stream<<tmp1->getData().getMojodiHesab()<<"\n";
                            }
                            fil.close();
+
+                           ui->progressBar->setValue(0);
+                           _time->stop();
+
                            break;
                        }
                    }
@@ -313,10 +327,7 @@ void dialog_pardakht::on_buttonBox_accepted()
            else if(this->manager_or_user==2)
            {
                karbar_node* tmp10=checkUserInformation();
-
-               this->close();
-
-               QFile fileee("C:/Users/albaloo/Documents/ProjectOfTerm2/karbarInformation.txt");
+               QFile fileee("C:/Users/erfan/Documents/ProjectOfTerm2/karbarInformation.txt");
                fileee.open(QIODevice::WriteOnly);
                QTextStream stream10(&fileee);
                stream10.setCodec("UTF-8");
@@ -365,7 +376,12 @@ void dialog_pardakht::on_buttonBox_accepted()
                            <<tmp10->getData().getMojodi()<<"\n";
                    }
                }
+               this->close();
+               facilities_for_karbar* ffk=new facilities_for_karbar(this->karbar_national_code);
+               ffk->show();
            }
+           ui->progressBar->setValue(0);
+           _time->stop();
        }
 
        else
@@ -408,15 +424,32 @@ void dialog_pardakht::on_buttonBox_accepted()
 
 void dialog_pardakht::on_buttonBox_rejected()
 {
-    this->close();
-    Dialog_moshakhasats* dlgmsh=new Dialog_moshakhasats();
-    dlgmsh->show();
+    ui->progressBar->setValue(0);
+    _time->stop();
+    if(manager_or_user==0)
+    {
+        this->close();
+        Dialog_moshakhasats_by_manager* dlgmsh=new Dialog_moshakhasats_by_manager();
+        dlgmsh->show();
+    }
+    else if(manager_or_user==1)
+    {
+        this->close();
+        Dialog_moshakhasats* dlgmsh=new Dialog_moshakhasats();
+        dlgmsh->show();
+    }
+    else if(manager_or_user==2)
+    {
+        this->close();
+        facilities_for_karbar* dlgmsh=new facilities_for_karbar(this->karbar_national_code);
+        dlgmsh->show();
+    }
 }
 
 void dialog_pardakht::writing_in_fil(QString ps)
 {
     date now1=date_now();
-    QFile file("C:/Users/albaloo/Documents/ProjectOfTerm2/karbarInformation.txt");
+    QFile file("C:/Users/erfan/Documents/ProjectOfTerm2/karbarInformation.txt");
     file.open(QIODevice::Append);
     QTextStream stream(&file);
     stream.setCodec("UTF-8");
@@ -441,8 +474,10 @@ void dialog_pardakht::writing_in_fil(QString ps)
      <<"13000"<<"\n";
 
     file.close();
+
     this->close();
 }
+
 
 void dialog_pardakht::checkProgressbr()
 {
