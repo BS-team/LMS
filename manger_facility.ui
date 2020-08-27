@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>manger_facility</class>
+ <widget class="QDialog" name="manger_facility">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1932</width>
+    <height>1165</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>190</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>IranNastaliq</family>
+     <pointsize>28</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 235, 175);</string>
+   </property>
+   <property name="text">
+    <string>امکانات مربوط به کتاب</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>300</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>IranNastaliq</family>
+     <pointsize>28</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 235, 175);</string>
+   </property>
+   <property name="text">
+    <string>امکانات مربوط به کاربران</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>860</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>410</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>IranNastaliq</family>
+     <pointsize>28</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 235, 175);</string>
+   </property>
+   <property name="text">
+    <string>تغییر مشخصات مدیر</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>520</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>IranNastaliq</family>
+     <pointsize>28</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(255, 235, 175);</string>
+   </property>
+   <property name="text">
+    <string>قرض و پس گرفتن کتاب</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="textBrowser">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>60</y>
+     <width>680</width>
+     <height>670</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>IranNastaliq</family>
+     <pointsize>24</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 24pt &quot;IranNastaliq&quot;;
+background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(236, 250, 73, 87), stop:0.151685 rgba(242, 250, 77, 98), stop:0.339799 rgba(255, 255, 110, 130), stop:0.5 rgba(255, 255, 255, 87), stop:0.668539 rgba(230, 255, 64, 89), stop:0.848315 rgba(227, 234, 86, 28), stop:1 rgba(197, 243, 32, 102));</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'IranNastaliq'; font-size:24pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:26pt;&quot;&gt;مدیر گرامی دررابطه کاربا این برنامه لازم به ذکر است که به نکات زیر توجه کنید:&lt;/span&gt;&lt;/p&gt;
+&lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;1.در امکانات کتاب می توانید کتاب ویرایش، اضافه، حذف وسرچ کنید .نکته موجود در این بخش هنگام ویرایش است که شما هرگونه ویرایشی را مجاز به انجام ان نمیباشید پس خواهشمند است که بادقت ویرایش کنید که با خطا مواجه نشوید .در این قسمت سرچ بر اساس ایتم های مختلف وجود دارد که شما می توانید به دلخواه هر ایتم را سرچ کنید. نکته ی دیگر در این بخش توجه به اضافه کردن کتاب است که هنگام اضافه کردن کتاب به درستی مشخصات کتاب را وارد کنید که دچار مشکل نشوید.&lt;/span&gt;&lt;/p&gt;
+&lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;2.در امکانات کاربر همانند اماکانات کتاب می باشد تنها با این تفاوت که هنگام عضویت کاربر باید مبلغی را جهت عضویت بپردازید اگر کاربر هنگام مراجعه پول نقد به همراه داشت شما می توانید با اطلاعات کارت بانکی خود او ار عضو کنید.&lt;/span&gt;&lt;/p&gt;
+&lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;3.در بخش قرض و پس گرفتن کتاب ها نیز قابلیت ویرایش وسرچ دارید ونیز می توانید هنگام مراحعه حضوری کاربر کتابی را که او سفارش داده تیک قرض گرفتن کتاب را بزنید ونیز هنگام مراجعه برای پس گرفتن کتاب نیز می توانید  تیک قرض گرفتن کتاب را بزنید که به این معنی است که کتاب به کتابخانه پس اورده شده است لازم به ذکر است که هنگام ادیت کردن تاریخ ها و کدکتاب و کد ملی کاربران توجه لازم را به عمل اورید تا دچار مشکل نشوید  هر گونه خسارت از این بابت به عهده شما می باشد.&lt;/span&gt;&lt;/p&gt;
+&lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;4.در بخش تغییر مشخصات می توانید مشخصات خود را تغییر دهید لازم به ذکر است که هنگام وارد نمودن رمز عبور دقت فرمایید چرا که قابل مشاهده نمی باشد.&lt;/span&gt;&lt;/p&gt;
+&lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:26pt;&quot;&gt;                                        &amp;quot;پیروز باشید&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
