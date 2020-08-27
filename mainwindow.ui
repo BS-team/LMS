@@ -6,171 +6,152 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2018</width>
-    <height>1813</height>
+    <width>1935</width>
+    <height>1355</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_3">
+   <widget class="QPushButton" name="pushButton_karbar">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>720</y>
-      <width>220</width>
-      <height>41</height>
+      <x>1510</x>
+      <y>360</y>
+      <width>151</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
-      <italic>true</italic>
-      <underline>false</underline>
-     </font>
-    </property>
-    <property name="text">
-     <string>24/3/1380</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>1280</x>
-      <y>640</y>
-      <width>181</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <italic>false</italic>
-     </font>
-    </property>
-    <property name="text">
-     <string>مدیران</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="karbar">
-    <property name="geometry">
-     <rect>
-      <x>1280</x>
-      <y>520</y>
-      <width>181</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <italic>false</italic>
+      <family>IranNastaliq</family>
+      <pointsize>25</pointsize>
      </font>
     </property>
     <property name="text">
      <string>کاربران</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QPushButton" name="pushButton_2_manager">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>430</y>
-      <width>781</width>
-      <height>41</height>
+      <x>1510</x>
+      <y>480</y>
+      <width>151</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
-      <italic>true</italic>
-      <underline>false</underline>
+      <family>IranNastaliq</family>
+      <pointsize>30</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>    به کتاب خانه بچه های صنعتی خوش امدید             </string>
+     <string>مدیران</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="pushButton_3_about">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>260</y>
-      <width>381</width>
-      <height>51</height>
+      <x>1510</x>
+      <y>590</y>
+      <width>151</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>15</pointsize>
-      <weight>75</weight>
-      <italic>true</italic>
-      <bold>true</bold>
-      <underline>false</underline>
+      <family>IranNastaliq</family>
+      <pointsize>30</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>به نام خدا</string>
+     <string>درباره ما</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QPushButton" name="pushButton_4_exit">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>1510</x>
       <y>710</y>
-      <width>291</width>
-      <height>51</height>
+      <width>151</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
-      <italic>true</italic>
-      <underline>false</underline>
-     </font>
-    </property>
-    <property name="text">
-     <string>   :تاریخ تاسیس</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>1280</x>
-      <y>740</y>
-      <width>177</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <italic>false</italic>
-      <underline>false</underline>
+      <family>IranNastaliq</family>
+      <pointsize>31</pointsize>
      </font>
     </property>
     <property name="text">
      <string>خروج</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="help">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>1280</x>
-      <y>850</y>
-      <width>177</width>
-      <height>45</height>
+      <x>670</x>
+      <y>280</y>
+      <width>600</width>
+      <height>160</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
-      <italic>false</italic>
+      <family>IranNastaliq</family>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>درباره ما</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;&amp;quot;خوش آمدید&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>10</y>
+      <width>941</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>IranNastaliq</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:72pt; font-weight:600;&quot;&gt;بسم اللّه الرِِحمن الرحیم&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>760</y>
+      <width>421</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>IranNastaliq</family>
+      <pointsize>33</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>   8/6/1380: تاریخ تاسیس</string>
     </property>
    </widget>
   </widget>
@@ -179,7 +160,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2018</width>
+     <width>1935</width>
      <height>25</height>
     </rect>
    </property>
