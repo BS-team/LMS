@@ -2,7 +2,7 @@
 #define HESAB_H
 
 #include <QString>
-#include <date.h>
+#include "date.h"
 
 
 class hesab

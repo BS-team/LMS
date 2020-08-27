@@ -9,6 +9,7 @@
 #include "functionToExplorUser.h"
 #include"functioforgharzandpassofbook.h"
 #include<QDebug>
+#include"checkpersianstring.h"
 
 
 edit_profile_of_karbar_by_himself::edit_profile_of_karbar_by_himself(QString s,QWidget *parent) :
@@ -17,15 +18,68 @@ edit_profile_of_karbar_by_himself::edit_profile_of_karbar_by_himself(QString s,Q
 {
     ui->setupUi(this);
 
-    this->id_Loginer=s;
+this->id_Loginer=s;
 
 //    QPalette pal = palette();
 //    // set black background
 //    pal.setColor(QPalette::Background, Qt::red);
 //    this->setAutoFillBackground(true);
 //    this->setPalette(pal);
+    QPixmap bkgnd("C:/Users/erfan/Documents/ProjectOfTerm2/karbarhimselfpic.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
+
+    ui->pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{"
+    "padding: -6px;"
+    //   "background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+       //                                                                                "stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,"
+        //                                                                                "stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);"
+    //"selection-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.977528 rgba(60, 60, 60, 255), stop:1 rgba(0, 0, 0, 0));"
+    "background-color: lightgray;"
+                                                "  left: -2px;"
+    "min-width: 8em;"
+    "border-style: solid;"
+    "border-color: black;"
+    "border-width: 3px;"
+    //"subcontrol-position: center;"
+    //"border-left-style: outset;"
+      //"border-right-style: outset;"
+               "selection-color: yellow;"
+                 "selection-background-color: blue;"
+
+    "border-bottom-left-radius: 30px;"
+    "border-top-right-radius: 30px;"
+    //"border-radius: 30px;"
+     "}"));
+
+    ui->pushButton->setStyleSheet(QString::fromUtf8("QPushButton{"
+    "padding: -6px;"
+    //   "background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+       //                                                                                "stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,"
+        //                                                                                "stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);"
+    //"selection-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.977528 rgba(60, 60, 60, 255), stop:1 rgba(0, 0, 0, 0));"
+    "background-color: lightgray;"
+                                                "  left: -2px;"
+    "min-width: 8em;"
+    "border-style: solid;"
+    "border-color: black;"
+    "border-width: 3px;"
+    //"subcontrol-position: center;"
+    //"border-left-style: outset;"
+      //"border-right-style: outset;"
+               "selection-color: yellow;"
+                 "selection-background-color: blue;"
+
+    "border-bottom-left-radius: 30px;"
+    "border-top-right-radius: 30px;"
+    //"border-radius: 30px;"
+    "}"));
+
     this->setWindowTitle("تغییرمشخصات");
-    for(int i=1950;i<2020;i++)
+    for(int i=1350;i<1399;i++)
     {
         ui->comboBox_year->addItem(QString::number(i));
     }
@@ -589,57 +643,57 @@ void edit_profile_of_karbar_by_himself::on_pushButton_clicked()  //set change
     {
         if(ui->lineEdit_phonenumber->text()[0] >57 || ui->lineEdit_phonenumber->text()[0] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[1] >57 || ui->lineEdit_phonenumber->text()[1] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[2] >57 || ui->lineEdit_phonenumber->text()[2] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[3] >57 || ui->lineEdit_phonenumber->text()[3] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[4] >57 || ui->lineEdit_phonenumber->text()[4] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[5] >57 || ui->lineEdit_phonenumber->text()[5] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[6] >57 || ui->lineEdit_phonenumber->text()[6] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[7] >57 || ui->lineEdit_phonenumber->text()[7] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[8] >57 || ui->lineEdit_phonenumber->text()[8] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[9] >57 || ui->lineEdit_phonenumber->text()[9] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
         else if(ui->lineEdit_phonenumber->text()[10] >57 || ui->lineEdit_phonenumber->text()[10] <48)
         {
-            QMessageBox::information(this,"failed","this phone number is not accaptable",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","فیلد شماره همراه را پرکنید",QMessageBox::Ok);
             k=0;
         }
     }
@@ -649,22 +703,79 @@ void edit_profile_of_karbar_by_himself::on_pushButton_clicked()  //set change
         {
             if((ui->lineEdit_password->text()[i]<65&&ui->lineEdit_password->text()[i]>57)||ui->lineEdit_password->text()[i]<48||(ui->lineEdit_password->text()[i]>91&&ui->lineEdit_password->text()[i]<97)||ui->lineEdit_password->text()[i]>123)
             {
-                QMessageBox::information(this,"failed","this password is not acceptable look at note",QMessageBox::Ok);
+                QMessageBox::information(this,"خطا","رمز خود را به درستی پرکنید",QMessageBox::Ok);
                 k=0;
                 break;
             }
         }
-        if(ui->lineEdit_password->text().length()<8)
-        {
-            QMessageBox::information(this,"failed","this password is less than 8 charactors",QMessageBox::Ok);
-            k=0;
-        }
         if(ui->lineEdit_previouspassword->text()!=ui->label_prevpas->text()  )
         {
-            QMessageBox::information(this,"failed","your previous password is not correct try again",QMessageBox::Ok);
+            QMessageBox::information(this,"خطا","رمز قبلی رابه درستی وارد کنید",QMessageBox::Ok);
+            k=0;
+        }
+        if(ui->lineEdit_password->text().length()<8)
+        {
+            QMessageBox::information(this,"خطا","رمز انتخابی نباید از 8 حرف کمتر باشد",QMessageBox::Ok);
             k=0;
         }
     }
+
+
+    if(ui->lineEdit_city->text()!="" && checkPersianStrings(ui->lineEdit_city->text())==0)
+    {
+        QMessageBox::information(this,"خطا","نام شهرخود رابه درستی وارد کنید",QMessageBox::Ok);
+        k=0;
+    }
+    if(ui->lineEdit_street->text()!="" && checkPersianStrings(ui->lineEdit_street->text())==0)
+    {
+        QMessageBox::information(this,"خطا","نام خیابان خود رابه درستی وارد کنید",QMessageBox::Ok);
+        k=0;
+    }
+    if(ui->lineEdit_alley->text()!="" && checkPersianStrings(ui->lineEdit_alley->text())==0)
+    {
+        QMessageBox::information(this,"خطا","نام کوچه خود رابه درستی وارد کنید",QMessageBox::Ok);
+        k=0;
+    }
+    if(ui->lineEdit_name->text()!="" && checkPersianStrings(ui->lineEdit_name->text())==0)
+    {
+        QMessageBox::information(this,"خطا","نام خود رابه درستی وارد کنید",QMessageBox::Ok);
+        k=0;
+    }
+    if(ui->lineEdit_lastname->text()!="" && checkPersianStrings(ui->lineEdit_lastname->text())==0)
+    {
+        QMessageBox::information(this,"خطا","نام خانوادگی خود رابه درستی وارد کنید",QMessageBox::Ok);
+        k=0;
+    }
+    for(int i=0;i<ui->lineEdit_postcard->text().length();i++)
+    {
+        if(ui->lineEdit_postcard->text().length()!=10||!(ui->lineEdit_postcard->text()[i].isDigit()))
+        {
+            QMessageBox::information(this,"خطا","کدپستی خود رابه درستی وارد کنید",QMessageBox::Ok);
+            k=0;
+            break;
+        }
+    }
+
+    for(int i=0;i<ui->lineEdit_email->text().length();i++)
+    {
+        if(ui->lineEdit_email->text()[i]!='@')
+        {
+            if( ui->lineEdit_email->text()[i]!='.')
+            {
+                if((ui->lineEdit_email->text()[i]<65&&ui->lineEdit_email->text()[i]>57)
+                        ||ui->lineEdit_email->text()[i]<48||
+                        (ui->lineEdit_email->text()[i]>91&&ui->lineEdit_email->text()[i]<97)||ui->lineEdit_email->text()[i]>123)
+                {
+                    QMessageBox::information(this,"خطا","ایمیل خود رابه درستی وارد کنید",QMessageBox::Ok);
+                    k=0;
+                    break;
+                }
+
+            }
+        }
+
+    }
+
 
     if(k==1)
     {
@@ -743,11 +854,11 @@ void edit_profile_of_karbar_by_himself::on_pushButton_clicked()  //set change
                 else
                 {
                      add1.setStreet(ui->label_previous_street_2->text());
-                 }
+                }
 
                 if(ui->lineEdit_alley->text()!="")
                 {
-                     add1.setStreet(ui->lineEdit_alley->text());
+                     add1.setAlley(ui->lineEdit_alley->text());
                 }
                 else
                 {
@@ -814,7 +925,7 @@ void edit_profile_of_karbar_by_himself::on_pushButton_clicked()  //set change
         }
 
 
-        QFile fil("C:/Users/albaloo/Documents/ProjectOfTerm2/karbarInformation.txt");
+        QFile fil("C:/Users/erfan/Documents/ProjectOfTerm2/karbarInformation.txt");
 
         fil.open(QIODevice::WriteOnly);
         QTextStream stream1(&fil);
